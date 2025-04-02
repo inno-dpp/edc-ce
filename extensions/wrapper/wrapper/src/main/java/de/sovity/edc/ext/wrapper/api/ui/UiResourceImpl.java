@@ -51,6 +51,7 @@ import de.sovity.edc.ext.wrapper.api.ui.pages.transferhistory.TransferHistoryPag
 import de.sovity.edc.ext.wrapper.api.ui.pages.transferhistory.TransferHistoryPageAssetFetcherService;
 import de.sovity.edc.extension.db.directaccess.DslContextFactory;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -59,6 +60,7 @@ import static de.sovity.edc.ext.wrapper.utils.ValidatorUtils.validate;
 
 @SuppressWarnings("java:S6539") // This class is so large so the generated API Clients can have one UiApi
 @RequiredArgsConstructor
+@Slf4j
 public class UiResourceImpl implements UiResource {
 
     private final ContractAgreementPageApiService contractAgreementApiService;
@@ -123,6 +125,7 @@ public class UiResourceImpl implements UiResource {
 
     @Override
     public ContractDefinitionPage getContractDefinitionPage() {
+        log.info("Contract definition page has been loaded");
         return new ContractDefinitionPage(contractDefinitionApiService.getContractDefinitions());
     }
 
@@ -158,6 +161,7 @@ public class UiResourceImpl implements UiResource {
 
     @Override
     public ContractAgreementPage getContractAgreementPage(@Nullable ContractAgreementPageQuery contractAgreementPageQuery) {
+        log.info("Contract agreement page has been loaded");
         return dslContextFactory.transactionResult(dsl ->
             contractAgreementApiService.contractAgreementPage(dsl, contractAgreementPageQuery));
     }
