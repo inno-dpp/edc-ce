@@ -39,7 +39,7 @@ By enabling parameterization, you can offer data consumers, to configure paramet
 
 **Available parameterizations**
 - **Method Parameterization**: You can allow your consumer to define the method (e.g. GET, POST, etc.) on how you fetch the data from your data source.
-- **Path Parameterization**: You can allow your consumer to define additional path segments of your data source on a data transfer request. If you have your data URL https://api.coincap.io/v2/assets and allow fetching specific data by adding "/{coin_name}", you could for example allow consumers to fetch data from https://api.coincap.io/v2/assets by enabling this option.
+- **Path Parameterization**: You can allow your consumer to define additional path segments of your data source on a data transfer request. If you have your data URL https://pro.coincap.io/dashboard and allow fetching specific data by adding "/{coin_name}", you could for example allow consumers to fetch data from https://pro.coincap.io/dashboard by enabling this option.
 - **Query Param Parameterization**: You can allow your consumer to define the query parameters on a data transfer request. Thus, consumers could define query-parameters of the data-source themselves. 
 - **Request Body Parameterization**: On methods like POST or PUT, HTTP allows to send additional data in the body of the request to your data-source. For example if the pre-selected method is POST and the endpoint allows to add data in the request-body, the consumer could send it's data within a data transfer request which is then used to send towards the data-source as body.
 
